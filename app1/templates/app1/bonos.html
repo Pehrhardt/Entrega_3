@@ -1,0 +1,65 @@
+{% extends 'app1/index.html ' %}
+{% load static %}
+
+{% block titulo %}
+<h2 class="mb-5">En esta página se podrá registrar los bonos disponibles a la BD</h2> 
+{% endblock titulo %}
+
+{% block formulario %} 
+ <!-- Formulario para agregar un Bono-->
+ <section class="features-icons bg-light text-center">
+  <div class="container position-relative">
+      <div class="row justify-content-center">
+          <div class="col-xl-8">
+            <form method="post" action="">
+              {% csrf_token %}
+                  <div class="form-group row">
+                    <label for="inputname" class="col-sm-4 col-form-label">Nombre</label>
+                    <div class="col-sm-8 ">
+                      <input type="text" class="form-control" id="inputEmail3" placeholder="Nombre del Bono" name="nombre_bono">
+                    </div>
+                  </div>
+                  <div class="form-group row topmargin">
+                    <label for="inputactivos" class="col-sm-4 col-form-label">Ticket</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="inputPassword3" placeholder="Ticket" name="ticketn">
+                    </div>    
+                  </div>
+                  <div class="form-group row topmargin">
+                      <label for="inputname" class="col-sm-4 col-form-label">V.N</label>
+                      <div class="col-sm-8 ">
+                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor nominal" name="vn">
+                      </div>
+                    </div>
+
+                    <div class="form-group row topmargin">
+                      <label for="inputname" class="col-sm-4 col-form-label">V.M </label>
+                      <div class="col-sm-8 ">
+                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor de mercado" name="vm">
+                      </div>
+                    </div>
+
+                    <div class="form-group row topmargin">
+                      <label for="inputname" class="col-sm-4 col-form-label">TIR</label>
+                      <div class="col-sm-8 ">
+                        <input type="number" class="form-control" id="inputEmail3" placeholder="Tasa de interna de retorno " name="TIR">
+                      </div>
+                    </div>
+
+
+                      <div class="col-sm-10">
+                      </div>
+                  
+                  </div> 
+                  <div class="form-group row row justify-content-center topmargin">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary">Registrar cliente</button>
+                    </div>
+                  </div>
+                </form>
+              </div> 
+      </div>
+  </div>
+</section>
+
+{% endblock %}

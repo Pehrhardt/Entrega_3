@@ -1,0 +1,43 @@
+{% extends 'app1/index.html ' %}
+{% load static %}
+
+{% block titulo %}
+<h2 class="mb-5">En esta página se podrá registrar un fondo de inversion a la BD</h2>   
+{% endblock titulo %}
+
+{% block formulario %} 
+ <!-- Formulario para agregar un Fondo de inversion-->
+ <section class="features-icons bg-light text-center">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+              <form method="post" action="">
+                {% csrf_token %}
+                    <div class="form-group row">
+                      <label for="inputname" class="col-sm-4 col-form-label">Nombre del fondo</label>
+                      <div class="col-sm-8 ">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Nombre del fondo" name="nombre_fondo">
+                      </div>
+                    </div>
+                    <div class="form-group row topmargin">
+                      <label for="inputactivos" class="col-sm-4 col-form-label">Cantidad de activos</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" id="inputPassword3" placeholder="Cantidad de activos" name="can_act">
+                      </div>    
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                        </div>
+                    </div> 
+                    <div class="form-group row row justify-content-center topmargin">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Registrar fondo</button>
+                      </div>
+                    </div>
+                  </form>
+                </div> 
+        </div>
+    </div>
+</section>
+
+{% endblock %}
